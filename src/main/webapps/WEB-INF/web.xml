@@ -9,7 +9,7 @@
         <servlet-class>com.hhuc.wechat.x.Service.Qubi</servlet-class>
         <init-param>
             <param-name>log4j</param-name>
-            <param-value>WEB-INF/log4j.properties</param-value><!--log4j配置文件路径-->
+            <param-value>com/hhuc/wechat/x/conf/log4j.properties</param-value><!--log4j配置文件路径-->
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
