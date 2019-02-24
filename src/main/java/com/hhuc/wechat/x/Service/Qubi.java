@@ -33,6 +33,10 @@ public class Qubi  extends HttpServlet {
      */
     public Qubi  () {
         super();
+        BasicConfigurator.configure ();
+
+        //Todo 修改为外部配置文件
+
         // TODO Auto-generated constructor stub
     }
 
@@ -55,13 +59,11 @@ public class Qubi  extends HttpServlet {
 //        String res = q.query_openid();
         Userexer userexer = new Userexer(data);
         String res = userexer.queryOpenid();
-        logger.error("This is dsds message.");
-        logger.debug("This is debug message.");
-        // 记录info级别的信息
-        logger.info("This is info message.");
+
+        logger.info(res);
         // 记录error级别的信息
-        logger.error("This is error message.");
-        out.println("查询结果"+"\n");
+
+        out.println("查询结果");
         out.println(res);
 
     }
