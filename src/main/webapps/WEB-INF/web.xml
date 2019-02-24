@@ -7,10 +7,16 @@
     <servlet>
         <servlet-name>Qubi</servlet-name>
         <servlet-class>com.hhuc.wechat.x.Service.Qubi</servlet-class>
+        <init-param>
+            <param-name>log4j</param-name>
+            <param-value>WEB-INF/log4j.properties</param-value><!--log4j配置文件路径-->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>Qubi</servlet-name>
         <url-pattern>/Service/Qubi</url-pattern>
+
     </servlet-mapping>
 
     <servlet>
@@ -21,4 +27,19 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Service/Login_wx</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Log4jInitServlte</servlet-name>
+        <servlet-class>com.hhuc.wechat.x.Service.Log4jInitServlte</servlet-class>
+        <init-param>
+            <param-name>log4j</param-name>
+            <param-value></param-value><!--log4j配置文件路径-->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Log4jInitServlte</servlet-name>
+        <url-pattern>/Log4jInitServlte</url-pattern>
+    </servlet-mapping>
+
 </web-app>
