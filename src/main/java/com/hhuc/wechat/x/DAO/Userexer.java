@@ -36,8 +36,7 @@ public class Userexer<sout> {
         } finally {
             session.close();
         }
-        String userJson =user.toString();
-        return userJson;
+        return user.toString();
     }
 
     private SqlSession getSqlSession() throws IOException {

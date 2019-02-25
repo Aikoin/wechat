@@ -1,7 +1,7 @@
 package com.hhuc.wechat.x.Service;
 /**
  * @program: pt
- * @description: id
+ * @description: openid
  * @author: LYX
  * @create: 2019-02-22 17:10
  **/
@@ -15,12 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @program: pt
- * @description: 写入用户基本信息
- * @author: LYX
- * @create: 2019-02-20 16:06
- **/
+
 
 public class Qubi  extends HttpServlet {
 
@@ -44,7 +39,7 @@ public class Qubi  extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置响应内容类型
         response.setHeader("content-type", "text/html;charset=UTF-8");
         response.setContentType("text/html;charset=UTF-8");
@@ -62,15 +57,11 @@ public class Qubi  extends HttpServlet {
 
         logger.info(res);
         // 记录error级别的信息
-
         out.println("查询结果");
         out.println(res);
-
     }
-
     // 处理 POST 方法请求的方法
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
-
 }
