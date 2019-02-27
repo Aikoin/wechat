@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="tomcat-ftp">
+    <serverData>
+      <paths name="tomcat-ftp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tomcat/webapps" local="$PROJECT_DIR$/out/artifacts/test3" web="/" />
+            <mapping local="" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

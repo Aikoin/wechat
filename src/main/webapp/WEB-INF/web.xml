@@ -27,7 +27,20 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Service/Login_wx</url-pattern>
     </servlet-mapping>
-
-
-
+    <servlet>
+    <servlet-name>ModifyPersonalData</servlet-name>
+    <servlet-class>com.hhuc.wechat.x.Service.ModifyPersonalData</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>ModifyPersonalData</servlet-name>
+        <url-pattern>/Service/ModifyPersonalData</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>com.hhuc.wechat.x.Service.AddUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/Service/AddUser</url-pattern>
+    </servlet-mapping>
 </web-app>
