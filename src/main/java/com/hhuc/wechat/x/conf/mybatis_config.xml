@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/hhuc/wechat/x/conf/User.xml"/>
+       <package name="com.hhuc.wechat.x.DAO"></package>
     </mappers>
 </configuration>

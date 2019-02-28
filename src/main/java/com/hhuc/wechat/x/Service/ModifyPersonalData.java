@@ -4,31 +4,36 @@ package com.hhuc.wechat.x.Service;
  * @description: openid
  * @author: LYX
  * @create: 2019-02-22 17:10
+ * 修改个人信息
+ *
+ * 接受修改后的信息，写入数据库
  **/
+
 import com.hhuc.wechat.x.DAO.Userexer;
 import com.hhuc.wechat.x.Models.User;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
-
-public class Qubi  extends HttpServlet {
+public class ModifyPersonalData extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static Logger logger = Logger.getLogger(Qubi.class);
+    private static Logger logger = Logger.getLogger(ModifyPersonalData.class);
 
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Qubi  () {
+    public ModifyPersonalData() {
         super();
+        System.out.println("v000000000000000000000000000000000000000000000000000000000000000000000000");
         BasicConfigurator.configure ();
 
         //Todo 修改为外部配置文件
@@ -46,20 +51,23 @@ public class Qubi  extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
+
         // 处理中文
         String openid = new String(request.getParameter("openid").getBytes("ISO8859-1"), "UTF-8");
+        String avatarUrl = new String(request.getParameter("avatarUrl").getBytes("ISO8859-1"), "UTF-8");
+        String nickname  = new String(request.getParameter("nickname").getBytes("ISO8859-1"), "UTF-8");
+        String country  = new String(request.getParameter("country").getBytes("ISO8859-1"), "UTF-8");
+        String phone = new String(request.getParameter("phone").getBytes("ISO8859-1"), "UTF-8");
+        String city = new String(request.getParameter("city").getBytes("ISO8859-1"), "UTF-8");
+        String province = new String(request.getParameter("province").getBytes("ISO8859-1"), "UTF-8");
+        String language = new String(request.getParameter("language").getBytes("ISO8859-1"), "UTF-8");
 
-        User user =new User();
-        user.setOpenid(openid);
-//        Query q = new Query(data);
-//
-//        String res = q.query_openid();
+
+        User user = new User(openid, phone, city, province, country, avatarUrl, language, nickname);
+
+
         Userexer userexer = new Userexer(user);
-        String res = userexer.queryOpenid();
-
-        logger.info(res);
-        // 记录error级别的信息
-        out.println("查询结果");
+        String res = userexer.updateUser();
         out.println(res);
     }
     // 处理 POST 方法请求的方法
