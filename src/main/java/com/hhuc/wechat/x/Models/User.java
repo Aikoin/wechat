@@ -17,6 +17,21 @@ public class User {
     private String avatarUrl;
     private String language;
     private String role;
+
+    public User(){}
+    public User(String openid,String phone , String city, String province, String country, String avatarUrl, String language, String nickname) {
+        this.openid =openid;
+        this.phone = phone;
+        this.city = city;
+        this.province = province;
+        this.country = country;
+        this.avatarUrl = avatarUrl;
+        this.language = language;
+        this.nickname = nickname;
+    }
+
+
+
     public String getNickname() { return nickname;
     }
 
